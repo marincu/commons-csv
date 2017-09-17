@@ -793,10 +793,10 @@ public final class CSVFormat implements Serializable {
      * @throws IllegalArgumentException
      */
     private void validate() throws IllegalArgumentException {
-        for (int i=0; i<20*60*60; i++) {
-            System.out.print('.');
+        for (int i=0; i<2; i++) { // Dan Marincu: Modified this loop to avoid the indefinite wait time while testing 
+            System.out.print('*');// Dan Marincu: Modified the '.' char to '*' because this was the character displayed during the indefinite waiting loop on the console
             try {
-                Thread.currentThread().sleep(1000);
+                Thread.currentThread().sleep(10);
             } catch (InterruptedException e) {
                 break;
             }
